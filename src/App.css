@@ -1,32 +1,93 @@
-.App {
-  text-align: center;
+main {
+  display: flex;
+  justify-content: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
+.masterBackground {
+  background-image: url(https://pics.freeartbackgrounds.com/fullhd/Pond_Background-609.jpg);
+  background-size: cover;
+  background-attachment: fixed;
   min-height: 100vh;
+  margin: 0;
+}
+
+
+#headerComponent {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 25px;
+
+}
+#profile {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+#profileInfo {
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+#profileInfo1 {
+  border: 1px solid white;
+  background-color: rgba(255,255,255,.5);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-top: 25px;
+  height: 600px;
+  width: 500px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#profileInfo2 {
+  border: 1px solid black;
+  background-color: rgba(0,0,0,.7);
+  height: 450px;
+  width: 450px;
+}
+.gif {
+  height: 70px;
+  width: 50px;
+  margin: 20px;
+}
+.cardLayout {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  max-width: 1100px;
+}
+#card {
+  background-color: rgba(255,255,255,.5);
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  height: 350px;
+  width: 300px;
+  margin: 20px;
+  padding-top: 10px;
+}
+#cardInfo {
+  padding: 15px;
+}
+#formPage {
+  min-width: 600px;
+}
+.formField {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255,255,255,.5);
+  padding-right: 25px;
+}
+.fullImage {
+  height: 600px;
+  width: 600px;
+  border: 1px solid white;
+}
+.tileImage {
+  height: 275px;
+  width: 275px;
 }
