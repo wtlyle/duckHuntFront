@@ -6,8 +6,26 @@ import Ducks from './pages/ducks.js'
 import NewDuck from './pages/newDuck.js'
 import Header from './components/header.js'
 import DuckPage from './pages/duckPage.js'
+import { getDucks, getDuck } from './api'
+
 
 class App extends Component {
+  constructor(props){
+    super(props)
+
+    this.state = {
+      allDuckies: []
+    }
+  }
+
+  componentDidMount() {
+    console.log("firing getDucks");
+       getDucks()
+       .then(APIducks => {
+           this.setState({allDuckies: APIducks})
+       })
+   }
+
   render() {
     return (
       <div>
@@ -16,8 +34,8 @@ class App extends Component {
           <Router>
             <Switch>
               <Route exact path='/ducks/new' component={NewDuck} />
-              <Route exact path= '/ducks/:id' component={DuckPage} />
-              <Route exact path='/ducks' component={Ducks} />
+              <Route exact path= '/ducks/:id' render={(props) => <DuckPage allDuckies={this.state.allDuckies} {...props}/>} />
+              <Route exact path='/ducks' render={(props) => <Ducks allDuckies={this.state.allDuckies} {...props}/>} />
               <Route exact path='/' component={Home} />
             </Switch>
           </Router>

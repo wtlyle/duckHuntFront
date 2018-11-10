@@ -21,13 +21,13 @@ class NewDuck extends Component {
                 <div className="form-group">
                   <label for="name" className="col-lg-2 control-label">Name</label>
                   <div className="col-lg-10">
-                    <input type="text" className="form-control" id="inputName" placeholder="Your Name Here" required onChange={this.handleChange}/>
+                    <input type="text" className="form-control" id="name" placeholder="Your Name Here" required onChange={this.handleChange}/>
                   </div>
                 </div>
                 <div className="form-group">
                   <label for="age" className="col-lg-2 control-label" required>Age</label>
                   <div className="col-lg-10">
-                    <input type="number" className="form-control" id="inputAge" onChange={this.handleChange} />
+                    <input type="number" className="form-control" id="age" onChange={this.handleChange} />
                   </div>
                 </div>
                 <div class="form-group">
@@ -43,6 +43,7 @@ class NewDuck extends Component {
                 </div>
               </div>
               </fieldset>
+              <input type="hidden" id='fullImage' value= '../images/duck.gif'/>
             </form>
           </div>
         </div>
@@ -56,6 +57,7 @@ class NewDuck extends Component {
   this.setState({form: form})
   }
   handleSubmit = (e) => {
+
     e.preventDefault()
   }
 }
