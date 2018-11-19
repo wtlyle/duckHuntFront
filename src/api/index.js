@@ -21,4 +21,18 @@ let getDuck = function(id) {
         })
 }
 
-export {getDucks, getDuck}
+let createDuck = function(duck) {
+  return fetch(BASE + '/ducks', {
+    body: JSON.stringify(duck),
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    method: "POST"
+  })
+    .then((resp) => {
+      let json = resp.json()
+      return json
+    })
+}
+
+export {getDucks, getDuck, createDuck}

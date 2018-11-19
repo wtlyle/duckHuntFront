@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import { createDuck } from "../api"
+import { Redirect } from 'react-router-dom'
 
 
 class NewDuck extends Component {
@@ -7,7 +8,11 @@ class NewDuck extends Component {
     super(props)
 
     this.state={
-      form: {}
+      form: {
+        fullImage: '/images/duck.gif'
+      },
+      success: false
+
     }
   }
   render() {
@@ -43,22 +48,31 @@ class NewDuck extends Component {
                 </div>
               </div>
               </fieldset>
-              <input type="hidden" id='fullImage' value= '../images/duck.gif'/>
+              <input type="hidden" id='fullImage' value= '/images/duck.gif'/>
             </form>
           </div>
+        </div>
+        <div>
+        {this.state.success && <Redirect to={`/ducks/${this.state.newId}`} />}
         </div>
       </main>
     );
   }
   handleChange = (event) => {
   let {form } = this.state
-  form[event.target.name] = event.target.value
+  form[event.target.id] = event.target.value
   console.log(form);
   this.setState({form: form})
   }
   handleSubmit = (e) => {
-
     e.preventDefault()
+    createDuck(this.state.form)
+    .then(successDuck => {
+      console.log("SUCCESS! New duck: ", successDuck)
+
+      this.setState({newId: successDuck.id, success: true})
+    })
+
   }
 }
 

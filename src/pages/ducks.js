@@ -12,7 +12,7 @@ class Ducks extends Component {
     console.log(this.props.allDuckies);
     let duckies = this.props.allDuckies.map((duck,i) => {
       console.log("i'm doing stuff");
-       return <DuckTale id={i} info={duck} />
+       return <DuckTale id={i + 1} info={duck} />
     })
 
     return (

@@ -6,7 +6,7 @@ class DuckPage extends Component {
     super(props)
 
     this.state={
-      duck: {
+        duck: {
         name: '',
         age: '',
         enjoys: '',
