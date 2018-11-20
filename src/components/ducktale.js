@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class Ducktale extends Component {
   render() {
-    let {fullImage, name} = this.props.info
+    let {fullImage, name, quacks} = this.props.info
     let image = fullImage != '' ? fullImage : '/images/duck.gif'
     console.log(this.props.info);
     return (
@@ -10,6 +10,7 @@ class Ducktale extends Component {
         <img src={image} className="tileImage" />
         <div id="cardInfo">
           <h4>{name}</h4>
+          <p className="callButtonCard">{quacks}</p>
         </div>
       </a>
     );

@@ -14,9 +14,9 @@ class Ducks extends Component {
 
   render() {
     console.log(this.state.allDuckies);
-    let duckies = this.state.allDuckies.map((duck,i) => {
+    let duckies = this.state.allDuckies.map((duck) => {
       console.log("i'm doing stuff");
-       return <DuckTale id={i + 1} info={duck} />
+       return <DuckTale key={duck.id} id={duck.id} info={duck} />
     })
 
     return (
@@ -28,7 +28,7 @@ class Ducks extends Component {
     );
   }
   componentDidMount() {
-    console.log("firing getDucks");
+    console.log("firing getDucks in ducks");
        getDucks()
        .then(APIducks => {
            this.setState({allDuckies: APIducks})

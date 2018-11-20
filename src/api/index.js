@@ -35,4 +35,17 @@ let createDuck = function(duck) {
     })
 }
 
-export {getDucks, getDuck, createDuck}
+let updateCounter = function(duck) {
+  return fetch(BASE + '/ducks/'+duck.id, {
+    body: JSON.stringify(duck),
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    method: "PUT"
+  })
+    .then((resp) => {
+      let json = resp.json()
+      return json
+    })
+}
+export {getDucks, getDuck, createDuck, updateCounter}

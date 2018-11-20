@@ -9,7 +9,8 @@ class NewDuck extends Component {
 
     this.state={
       form: {
-        fullImage: '/images/duck.gif'
+        fullImage: '/images/duck.gif',
+        quacks: 0
       },
       success: false
 
@@ -49,6 +50,7 @@ class NewDuck extends Component {
               </div>
               </fieldset>
               <input type="hidden" id='fullImage' value= '/images/duck.gif'/>
+              <input type="hidden" id='quacks' value="0"/>
             </form>
           </div>
         </div>
